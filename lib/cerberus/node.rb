@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Cerberus
-  class Matcher
+  class Node
   end
 end

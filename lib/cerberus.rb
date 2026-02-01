@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'cerberus/version'
+require_relative "cerberus/version"
 
 # Core files
-require 'cerberus/rule'
-require 'cerberus/matcher'
-require 'cerberus/condition'
-require 'cerberus/operand'
+require "cerberus/rule"
+require "cerberus/matcher"
+require "cerberus/condition"
+require "cerberus/operand"
 
 module Cerberus
   class Error < StandardError; end

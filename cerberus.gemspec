@@ -9,18 +9,18 @@ Gem::Specification.new do |spec|
   spec.email         = ["dan.nasibullin@gmail.com"]
 
   spec.summary       = "High-performance ABAC (Attribute-Based Access Control) engine for Ruby"
-  spec.description   = "Cerberus is a policy evaluation engine implementing ABAC/XACML-like authorization model for Ruby, Rails and Hanami applications."
+  spec.description   = "Cerberus is a policy evaluation engine implementing ABAC authorization model."
   spec.homepage      = "https://github.com/D-Black-N/cerberus"
   spec.license       = "MIT"
 
   spec.required_ruby_version = ">= 3.1"
 
   spec.metadata = {
-    "homepage_uri"        => spec.homepage,
-    "source_code_uri"    => spec.homepage,
-    "changelog_uri"      => "#{spec.homepage}/blob/main/CHANGELOG.md",
-    "bug_tracker_uri"    => "#{spec.homepage}/issues",
-    "allowed_push_host"  => "https://rubygems.org",
+    "homepage_uri" => spec.homepage,
+    "source_code_uri" => spec.homepage,
+    "changelog_uri" => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    "bug_tracker_uri" => "#{spec.homepage}/issues",
+    "allowed_push_host" => "https://rubygems.org",
     "rubygems_mfa_required" => "true"
   }
 

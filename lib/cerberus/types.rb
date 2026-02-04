@@ -21,17 +21,20 @@ module Cerberus
   # - json
   #
   module Types
+    MAPPER = {
+      "string" => ->(value) { value },
+      "integer" => ->(value) { Integer(value) },
+      "float" => ->(value) { Float(value) },
+      "boolean" => ->(value) { value == "true" },
+      "time" => ->(value) { Time.parse(value) },
+      "date" => ->(value) { Date.parse(value) },
+      "datetime" => ->(value) { DateTime.parse(value) },
+      "json" => ->(value) { JSON.parse(value) },
+      "nil" => ->(_) { nil }
+    }.freeze
+
     def self.cast(value, type)
-      case type
-      when "string", "nil" then value
-      when "integer"       then Integer(value)
-      when "float"         then Float(value)
-      when "boolean"       then value == "true"
-      when "time"          then Time.parse(value)
-      when "date"          then Date.parse(value)
-      when "datetime"      then DateTime.parse(value)
-      when "json"          then JSON.parse(value)
-      end
+      MAPPER.fetch(type).call(value)
     end
   end
 end

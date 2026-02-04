@@ -10,17 +10,17 @@ module Cerberus
   # different decision semantics such as permit-overrides or deny-overrides.
   #
   class Policy
-    attr_reader :action, :resource_type, :rules, :combining_algorithm
+    attr_reader :action, :entity, :rules, :strategy
 
-    def initialize(action:, resource_type:, rules:, combining_algorithm:)
+    def initialize(action:, entity:, rules:, strategy: Cerberus::Strategies::PermitOverrides)
       @action = action
-      @resource_type = resource_type
+      @entity = entity
       @rules = rules
-      @combining_algorithm = combining_algorithm
+      @strategy = strategy
     end
 
     def evaluate(context)
-      combining_algorithm.combine(rules, context)
+      strategy.combine(rules, context)
     end
   end
 end

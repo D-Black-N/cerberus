@@ -10,11 +10,9 @@ module Cerberus
   # different decision semantics such as permit-overrides or deny-overrides.
   #
   class Policy
-    attr_reader :action, :entity, :rules, :strategy
+    attr_reader :rules, :strategy
 
-    def initialize(action:, entity:, rules:, strategy: Cerberus::Strategies::PermitOverrides)
-      @action = action
-      @entity = entity
+    def initialize(rules:, strategy: Cerberus::Strategies::PermitOverrides)
       @rules = rules
       @strategy = strategy
     end

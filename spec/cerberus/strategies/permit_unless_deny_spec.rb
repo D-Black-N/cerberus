@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Cerberus::Strategies::PermitUnlessDeny do
-  subject { described_class.new.combine(rules, {}) }
+  subject { described_class.combine(rules, {}) }
 
   let(:rules) do
     [

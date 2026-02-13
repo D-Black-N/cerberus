@@ -12,7 +12,7 @@ module Cerberus
     # Evaluation is short-circuited on the first :permit.
     #
     class PermitOverrides
-      def combine(rules, context)
+      def self.combine(rules, context)
         deny = nil
 
         rules.each do |rule|

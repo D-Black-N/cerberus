@@ -8,7 +8,7 @@ module Cerberus
     # Otherwise returns :permit.
     #
     class PermitUnlessDeny
-      def combine(rules, context)
+      def self.combine(rules, context)
         rules.any? { |rule| rule.evaluate(context) == :deny } ? :deny : :permit
       end
     end

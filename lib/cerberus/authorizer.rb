@@ -14,20 +14,13 @@ module Cerberus
 
     def authorize(action:, subject: nil, resource: nil, env: {})
       policy = resolver.execute(action)
-
       policy&.evaluate(subject:, resource:, env:) == :permit
     end
 
     def authorize!(action:, **args)
-      raise NotAuthorized, message(action:) unless authorize(action:, **args)
+      return true if authorize(action:, **args)
 
-      true
-    end
-
-    private
-
-    def message(action:)
-      "Not authorized to #{action}"
+      raise NotAuthorized, "Not authorized to #{action}"
     end
   end
 end

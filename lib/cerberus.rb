@@ -18,6 +18,7 @@ require "cerberus/strategies/permit_overrides"
 require "cerberus/strategies/permit_unless_deny"
 
 require "cerberus/policy"
+require "cerberus/authorizer"
 
 module Cerberus
   class Error < StandardError; end

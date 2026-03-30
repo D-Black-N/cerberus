@@ -1,0 +1,49 @@
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AndOr:
+  EnforcedStyle: always
+
+Style/CollectionCompact:
+  Enabled: true
+
+Style/DigChain:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - '.simplecov'
+    - '**/*.rake'
+    - '**/*.builder'
+    - '**/*.jbuilder'
+    - Capfile
+    - Gemfile
+    - Guardfile
+    - bin/*
+    - config/*.rb
+    - db/**/*
+    - features/**/*
+    - script/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+
+Style/HashConversion:
+  Enabled: true
+
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+  EnforcedShorthandSyntax: always
+
+Style/MultilineMethodSignature:
+  Description: Avoid multi-line method signatures.
+  Enabled: false
+  VersionAdded: '0.59'
+
+Style/OpenStructUse:
+  Enabled: false
+
+Style/QuotedSymbols:
+  Enabled: true

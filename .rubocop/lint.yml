@@ -1,0 +1,12 @@
+Lint/EmptyBlock:
+  Enabled: true
+
+Lint/RedundantWithIndex:
+  Enabled: false
+
+Lint/RedundantWithObject:
+  Enabled: false
+
+Lint/SuppressedException:
+  AllowComments: true
+  AllowNil: true

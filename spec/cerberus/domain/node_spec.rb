@@ -56,10 +56,10 @@ RSpec.describe Cerberus::Domain::Node do
         described_class.new(operator: :or, children: [third_condition, fourth_condition])
       ]
     end
-    let(:first_condition) { instance_double(Cerberus::Condition, evaluate: first_evaluate) }
-    let(:second_condition) { instance_double(Cerberus::Condition, evaluate: second_evaluate) }
-    let(:third_condition) { instance_double(Cerberus::Condition, evaluate: third_evaluate) }
-    let(:fourth_condition) { instance_double(Cerberus::Condition, evaluate: fourth_evaluate) }
+    let(:first_condition) { instance_double(Cerberus::Domain::Condition, evaluate: first_evaluate) }
+    let(:second_condition) { instance_double(Cerberus::Domain::Condition, evaluate: second_evaluate) }
+    let(:third_condition) { instance_double(Cerberus::Domain::Condition, evaluate: third_evaluate) }
+    let(:fourth_condition) { instance_double(Cerberus::Domain::Condition, evaluate: fourth_evaluate) }
 
     context "when result true" do
       let(:first_evaluate) { true }

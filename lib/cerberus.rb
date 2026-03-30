@@ -16,6 +16,6 @@ require "cerberus/domain/policy"
 require "cerberus/application/authorizer"
 
 module Cerberus
-  class Error < StandardError; end
+  class NotAuthorized < StandardError; end
   # Your code goes here...
 end

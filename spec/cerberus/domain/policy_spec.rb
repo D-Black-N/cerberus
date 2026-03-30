@@ -6,7 +6,9 @@ RSpec.describe Cerberus::Domain::Policy do
   let(:action) { "test" }
   let(:entity) { "Object" }
   let(:rules) { [] }
-  let(:strategy) { class_double(Cerberus::Domain::Strategies::PermitOverrides, combine: :permit) }
+  let(:strategy) { :permit_overrides }
+
+  before { allow(Cerberus::Domain::Strategies::PermitOverrides).to receive(:combine).and_return(:permit) }
 
   it { is_expected.to be :permit }
 end

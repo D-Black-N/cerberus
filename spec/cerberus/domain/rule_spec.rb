@@ -3,7 +3,7 @@
 RSpec.describe Cerberus::Domain::Rule do
   subject { described_class.new(effect:, condition:).evaluate({}) }
 
-  let(:condition) { instance_double(Cerberus::Node, evaluate:) }
+  let(:condition) { instance_double(Cerberus::Domain::Node, evaluate:) }
 
   context "when rule applicable" do
     let(:evaluate) { true }

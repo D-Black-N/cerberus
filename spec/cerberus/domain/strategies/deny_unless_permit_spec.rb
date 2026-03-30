@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Strategies::PermitOverrides do
+RSpec.describe Cerberus::Domain::Strategies::DenyUnlessPermit do
   subject { described_class.combine(rules, {}) }
 
   let(:rules) do
     [
-      instance_double(Cerberus::Rule, evaluate: first_rule),
-      instance_double(Cerberus::Rule, evaluate: second_rule)
+      instance_double(Cerberus::Domain::Rule, evaluate: first_rule),
+      instance_double(Cerberus::Domain::Rule, evaluate: second_rule)
     ]
   end
 
@@ -22,12 +22,5 @@ RSpec.describe Cerberus::Strategies::PermitOverrides do
     let(:second_rule) { :deny }
 
     it { is_expected.to be :deny }
-  end
-
-  context "when not applicable" do
-    let(:first_rule) { nil }
-    let(:second_rule) { nil }
-
-    it { is_expected.to be_nil }
   end
 end

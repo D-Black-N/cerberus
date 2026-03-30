@@ -5,8 +5,8 @@ RSpec.describe Cerberus::Domain::Node do
 
   let(:children) do
     [
-      instance_double(Cerberus::Condition, evaluate: first_condition),
-      instance_double(Cerberus::Condition, evaluate: second_condition)
+      instance_double(Cerberus::Domain::Condition, evaluate: first_condition),
+      instance_double(Cerberus::Domain::Condition, evaluate: second_condition)
     ]
   end
 

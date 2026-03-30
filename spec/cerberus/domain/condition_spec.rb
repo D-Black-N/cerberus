@@ -3,8 +3,8 @@
 RSpec.describe Cerberus::Domain::Condition do
   subject(:evaluate) { described_class.new(left:, right:, operator:).evaluate({}) }
 
-  let(:left) { instance_double(Cerberus::Operand, resolve: left_value) }
-  let(:right) { instance_double(Cerberus::Operand, resolve: right_value) }
+  let(:left) { instance_double(Cerberus::Domain::Operand, resolve: left_value) }
+  let(:right) { instance_double(Cerberus::Domain::Operand, resolve: right_value) }
 
   context "when compared success" do
     let(:operator) { "==" }

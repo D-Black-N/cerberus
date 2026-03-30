@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require "cerberus/strategies/deny_overrides"
-require "cerberus/strategies/deny_unless_permit"
-require "cerberus/strategies/permit_overrides"
-require "cerberus/strategies/permit_unless_deny"
+require "cerberus/domain/strategies/deny_overrides"
+require "cerberus/domain/strategies/deny_unless_permit"
+require "cerberus/domain/strategies/permit_overrides"
+require "cerberus/domain/strategies/permit_unless_deny"
 
 module Cerberus
   module Domain

@@ -7,13 +7,13 @@ require "date"
 require "json"
 
 require "cerberus/types"
-require "cerberus/operand"
-require "cerberus/condition"
-require "cerberus/node"
-require "cerberus/rule"
-require "cerberus/policy"
+require "cerberus/domain/operand"
+require "cerberus/domain/condition"
+require "cerberus/domain/node"
+require "cerberus/domain/rule"
+require "cerberus/domain/policy"
 
-require "cerberus/authorizer"
+require "cerberus/application/authorizer"
 
 module Cerberus
   class Error < StandardError; end

@@ -11,13 +11,8 @@ require "cerberus/operand"
 require "cerberus/condition"
 require "cerberus/node"
 require "cerberus/rule"
-
-require "cerberus/strategies/deny_overrides"
-require "cerberus/strategies/deny_unless_permit"
-require "cerberus/strategies/permit_overrides"
-require "cerberus/strategies/permit_unless_deny"
-
 require "cerberus/policy"
+
 require "cerberus/authorizer"
 
 module Cerberus

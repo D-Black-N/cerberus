@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Operand do
+RSpec.describe Cerberus::Domain::Operand do
   subject(:resolve) { described_class.new(kind:, name:, value:, value_type:).resolve(context) }
 
   let(:context) { {} }

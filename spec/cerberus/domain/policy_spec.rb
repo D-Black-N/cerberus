@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Policy do
+RSpec.describe Cerberus::Domain::Policy do
   subject { described_class.new(rules:, strategy:).evaluate({}) }
 
   let(:action) { "test" }

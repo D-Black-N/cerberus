@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Condition do
+RSpec.describe Cerberus::Domain::Condition do
   subject(:evaluate) { described_class.new(left:, right:, operator:).evaluate({}) }
 
   let(:left) { instance_double(Cerberus::Operand, resolve: left_value) }

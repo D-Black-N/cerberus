@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Node do
+RSpec.describe Cerberus::Domain::Node do
   subject { described_class.new(operator:, children:).evaluate({}) }
 
   let(:children) do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Rule do
+RSpec.describe Cerberus::Domain::Rule do
   subject { described_class.new(effect:, condition:).evaluate({}) }
 
   let(:condition) { instance_double(Cerberus::Node, evaluate:) }

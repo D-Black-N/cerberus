@@ -37,7 +37,7 @@ RSpec.describe Cerberus::Domain::Operand do
     end
 
     context "when context values are objects" do
-      let(:object) { Struct.new(:role) }
+      let(:object) { Struct.new(:role, keyword_init: true) }
       let(:context) { { subject: object.new(role: "admin") } }
 
       it { is_expected.to eq("admin") }
@@ -45,8 +45,8 @@ RSpec.describe Cerberus::Domain::Operand do
       context "with nested attributes" do
         let(:kind) { "subject" }
         let(:name) { "data.role" }
-        let(:object) { Struct.new(:data) }
-        let(:nested_object) { Struct.new(:role) }
+        let(:object) { Struct.new(:data, keyword_init: true) }
+        let(:nested_object) { Struct.new(:role, keyword_init: true) }
         let(:context) { { subject: object.new(data: nested_object.new(role: "admin")) } }
 
         it { is_expected.to eq("admin") }
@@ -62,7 +62,7 @@ RSpec.describe Cerberus::Domain::Operand do
       end
 
       context "with object" do
-        let(:object) { Struct.new(:role) }
+        let(:object) { Struct.new(:role, keyword_init: true) }
         let(:context) { { subject: object.new(role: "admin") } }
         let(:name) { "test" }
 

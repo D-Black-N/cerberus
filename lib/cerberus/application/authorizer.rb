@@ -2,8 +2,6 @@
 
 module Cerberus
   module Application
-    # Policy Enforcement Point (PEP).
-    # Responsible for resolving a policy and enforcing its decision.
     class Authorizer
       attr_reader :resolver
 

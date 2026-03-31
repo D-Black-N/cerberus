@@ -3,15 +3,6 @@
 module Cerberus
   module Domain
     module Strategies
-      # Rule-combining strategy: permit-overrides.
-      #
-      # Evaluates rules sequentially and returns:
-      # - :permit if at least one rule evaluates to :permit
-      # - :deny if no permits were found but at least one rule evaluates to :deny
-      # - nil if no rules are applicable
-      #
-      # Evaluation is short-circuited on the first :permit.
-      #
       class PermitOverrides
         def self.combine(rules, context)
           deny = nil

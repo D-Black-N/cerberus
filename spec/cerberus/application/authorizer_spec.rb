@@ -45,8 +45,8 @@ RSpec.describe Cerberus::Application::Authorizer do
     end
   end
 
-  describe '#authorize' do
-    subject { authorizer.authorize(action:, subject: subject_data, resource:, env:) }
+  describe '#authorized?' do
+    subject { authorizer.authorized?(action:, subject: subject_data, resource:, env:) }
 
     context 'when policy exist' do
       before do

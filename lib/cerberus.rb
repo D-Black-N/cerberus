@@ -17,5 +17,16 @@ require 'cerberus/application/authorizer'
 
 module Cerberus
   class NotAuthorized < StandardError; end
-  # Your code goes here...
+
+  module ClassMethods
+    def configuration
+      @configuration ||= Configuration.new
+    end
+
+    def plugin(name, **opts)
+      Plugins.load(self, name, **opts)
+    end
+  end
+
+  extend ClassMethods
 end

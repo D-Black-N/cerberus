@@ -10,21 +10,21 @@ RSpec.describe Cerberus::Domain::Strategies::PermitOverrides do
     ]
   end
 
-  context "when permit" do
+  context 'when permit' do
     let(:first_rule) { :permit }
     let(:second_rule) { :deny }
 
     it { is_expected.to be :permit }
   end
 
-  context "when deny" do
+  context 'when deny' do
     let(:first_rule) { nil }
     let(:second_rule) { :deny }
 
     it { is_expected.to be :deny }
   end
 
-  context "when not applicable" do
+  context 'when not applicable' do
     let(:first_rule) { nil }
     let(:second_rule) { nil }
 

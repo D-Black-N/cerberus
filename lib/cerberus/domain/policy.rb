@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require "cerberus/domain/strategies/deny_overrides"
-require "cerberus/domain/strategies/deny_unless_permit"
-require "cerberus/domain/strategies/permit_overrides"
-require "cerberus/domain/strategies/permit_unless_deny"
+require 'cerberus/domain/strategies/deny_overrides'
+require 'cerberus/domain/strategies/deny_unless_permit'
+require 'cerberus/domain/strategies/permit_overrides'
+require 'cerberus/domain/strategies/permit_unless_deny'
 
 module Cerberus
   module Domain
@@ -14,7 +14,7 @@ module Cerberus
         permit_overrides:   Strategies::PermitOverrides,
         permit_unless_deny: Strategies::PermitUnlessDeny,
         deny_overrides:     Strategies::DenyOverrides,
-        deny_unless_permit: Strategies::DenyUnlessPermit,
+        deny_unless_permit: Strategies::DenyUnlessPermit
       }.freeze
 
       def initialize(rules:, strategy: :permit_overrides)

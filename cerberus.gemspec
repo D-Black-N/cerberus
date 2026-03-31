@@ -1,27 +1,27 @@
 # frozen_string_literal: true
 
-require_relative "lib/cerberus/version"
+require_relative 'lib/cerberus/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "cerberus"
+  spec.name          = 'cerberus'
   spec.version       = Cerberus::VERSION
-  spec.authors       = ["Danil Nasibullin"]
-  spec.email         = ["dan.nasibullin@gmail.com"]
+  spec.authors       = ['Danil Nasibullin']
+  spec.email         = ['dan.nasibullin@gmail.com']
 
-  spec.summary       = "High-performance ABAC (Attribute-Based Access Control) engine for Ruby"
-  spec.description   = "Cerberus is a policy evaluation engine implementing ABAC authorization model."
-  spec.homepage      = "https://github.com/D-Black-N/cerberus"
-  spec.license       = "MIT"
+  spec.summary       = 'High-performance ABAC (Attribute-Based Access Control) engine for Ruby'
+  spec.description   = 'Cerberus is a policy evaluation engine implementing ABAC authorization model.'
+  spec.homepage      = 'https://github.com/D-Black-N/cerberus'
+  spec.license       = 'MIT'
 
-  spec.required_ruby_version = ">= 3.1"
+  spec.required_ruby_version = '>= 3.1'
 
   spec.metadata = {
-    "homepage_uri" => spec.homepage,
-    "source_code_uri" => spec.homepage,
-    "changelog_uri" => "#{spec.homepage}/blob/main/CHANGELOG.md",
-    "bug_tracker_uri" => "#{spec.homepage}/issues",
-    "allowed_push_host" => "https://rubygems.org",
-    "rubygems_mfa_required" => "true"
+    'homepage_uri'          => spec.homepage,
+    'source_code_uri'       => spec.homepage,
+    'changelog_uri'         => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    'bug_tracker_uri'       => "#{spec.homepage}/issues",
+    'allowed_push_host'     => 'https://rubygems.org',
+    'rubygems_mfa_required' => 'true'
   }
 
   gemspec = File.basename(__FILE__)
@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 end

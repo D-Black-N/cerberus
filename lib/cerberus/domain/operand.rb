@@ -16,7 +16,7 @@ module Cerberus
       def resolve(context)
         return types.cast(value, value_type) if kind == :constant
 
-        keys = name.is_a?(String) ? name.split(".") : Array(name)
+        keys = name.is_a?(String) ? name.split('.') : Array(name)
         object = context.fetch(kind)
 
         keys.reduce(object) do |memo, key|

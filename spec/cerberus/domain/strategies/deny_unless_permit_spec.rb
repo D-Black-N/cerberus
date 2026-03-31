@@ -10,14 +10,14 @@ RSpec.describe Cerberus::Domain::Strategies::DenyUnlessPermit do
     ]
   end
 
-  context "when permit" do
+  context 'when permit' do
     let(:first_rule) { :permit }
     let(:second_rule) { :deny }
 
     it { is_expected.to be :permit }
   end
 
-  context "when deny" do
+  context 'when deny' do
     let(:first_rule) { nil }
     let(:second_rule) { :deny }
 

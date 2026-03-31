@@ -5,23 +5,23 @@ RSpec.describe Cerberus::Domain::Rule do
 
   let(:condition) { instance_double(Cerberus::Domain::Node, evaluate:) }
 
-  context "when rule applicable" do
+  context 'when rule applicable' do
     let(:evaluate) { true }
 
-    context "when permit" do
+    context 'when permit' do
       let(:effect) { :permit }
 
       it { is_expected.to be effect }
     end
 
-    context "when deny" do
+    context 'when deny' do
       let(:effect) { :deny }
 
       it { is_expected.to be effect }
     end
   end
 
-  context "when rule not applicable" do
+  context 'when rule not applicable' do
     let(:evaluate) { false }
     let(:effect) { :permit }
 

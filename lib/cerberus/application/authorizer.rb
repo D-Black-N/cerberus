@@ -16,7 +16,7 @@ module Cerberus
         policy&.evaluate(subject:, resource:, env:) == :permit
       end
 
-      def authorized!(action:, **args)
+      def authorize!(action:, **args)
         authorized?(action:, **args) || (raise NotAuthorized, "Not authorized to #{action}")
       end
     end

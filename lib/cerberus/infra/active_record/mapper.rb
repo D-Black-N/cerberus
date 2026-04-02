@@ -4,13 +4,12 @@ module Cerberus
   module Infra
     module ActiveRecord
       class Mapper
-        attr_reader :policy_class, :rule_class, :builder, :strategies
+        attr_reader :domain_policy, :domain_rule, :builder
 
-        def initialize(policy_class:, rule_class:, builder:, strategies:)
-          @policy_class = policy_class
-          @rule_class   = rule_class
-          @builder      = builder
-          @strategies   = strategies
+        def initialize(domain_policy:, domain_rule:, builder:)
+          @domain_policy = domain_policy
+          @domain_rule   = domain_rule
+          @builder       = builder
         end
 
         def call(record)

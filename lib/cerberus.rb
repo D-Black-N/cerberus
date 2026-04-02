@@ -6,7 +6,7 @@ require 'time'
 require 'date'
 require 'json'
 
-require 'cerberus/types'
+require 'cerberus/infra/types'
 require 'cerberus/domain/operand'
 require 'cerberus/domain/condition'
 require 'cerberus/domain/node'

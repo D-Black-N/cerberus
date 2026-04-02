@@ -5,7 +5,7 @@ module Cerberus
     class Operand
       attr_reader :kind, :name, :value, :value_type, :types
 
-      def initialize(kind:, name: nil, value: nil, value_type: nil, types: Types)
+      def initialize(kind:, name: nil, value: nil, value_type: nil, types: Infra::Types)
         @kind = kind.to_sym
         @name = name
         @value = value

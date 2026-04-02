@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerberus::Types do
+RSpec.describe Cerberus::Infra::Types do
   subject { described_class.cast(value, type) }
 
   context 'with string' do

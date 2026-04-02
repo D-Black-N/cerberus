@@ -11,7 +11,7 @@ module Cerberus
           repository: Infra::ActiveRecord::Repository.new(
             model: Infra::ActiveRecord::Models::Policy
           ),
-          mapper: Infra::ActiveRecord::Mapper.new(
+          mapper:     Infra::ActiveRecord::Mapper.new(
             domain_policy: Domain::Policy,
             domain_rule:   Domain::Rule,
             builder:       Infra::ActiveRecord::Builder.new

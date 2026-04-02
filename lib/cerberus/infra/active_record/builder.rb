@@ -26,8 +26,6 @@ module Cerberus
             build_node(record)
           when condition_model
             build_condition(record)
-          else
-            raise ArgumentError, "Unknown expression record: #{record.class}"
           end
         end
 

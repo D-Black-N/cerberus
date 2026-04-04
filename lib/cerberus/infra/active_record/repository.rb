@@ -10,7 +10,7 @@ module Cerberus
           @model = model
         end
 
-        def find(action, resource_type)
+        def find(action:, resource_type:)
           model.find_by(action:, resource_type:)
         end
       end

@@ -8,7 +8,10 @@ module Cerberus
           class Node < Expression
             OPERATORS = { or: 'or', and: 'and' }.freeze
 
-            has_many :children, class_name: "#{namespace}Expression", dependent: :destroy
+            has_many :children,
+                     class_name:  "#{namespace}Expression",
+                     foreign_key: :parent_id,
+                     dependent:   :destroy
 
             enum :operator, OPERATORS, prefix: true
           end

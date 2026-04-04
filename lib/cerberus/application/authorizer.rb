@@ -9,13 +9,14 @@ module Cerberus
         @resolver = resolver
       end
 
-      def authorized?(action:, subject: nil, resource: nil, env: {})
-        policy = resolver.execute(action)
+      def authorized?(action:, resource_type:, subject: nil, resource: nil, env: {})
+        policy = resolver.resolve(action:, resource_type:)
         policy&.evaluate(subject:, resource:, env:) == :permit
       end
 
-      def authorize!(action:, **args)
-        authorized?(action:, **args) || (raise NotAuthorized, "Not authorized to #{action}")
+      def authorize!(action:, resource_type:, **args)
+        authorized?(action:, resource_type:, **args) ||
+          (raise NotAuthorized, "Not authorized #{resource_type} to #{action}")
       end
     end
   end

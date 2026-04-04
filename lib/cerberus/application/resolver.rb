@@ -8,8 +8,8 @@ module Cerberus
         @mapper     = mapper
       end
 
-      def resolve(action)
-        record = repository.find(action)
+      def resolve(action:, resource_type:)
+        record = repository.find(action:, resource_type:)
         return unless record
 
         mapper.call(record)

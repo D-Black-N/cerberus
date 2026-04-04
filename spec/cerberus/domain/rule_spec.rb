@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 RSpec.describe Cerberus::Domain::Rule do
-  subject { described_class.new(effect:, condition:).evaluate({}) }
+  subject { described_class.new(effect:, expression:).evaluate({}) }
 
-  let(:condition) { instance_double(Cerberus::Domain::Node, evaluate:) }
+  let(:expression) { instance_double(Cerberus::Domain::Node, evaluate:) }
 
   context 'when rule applicable' do
     let(:evaluate) { true }

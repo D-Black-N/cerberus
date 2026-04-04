@@ -25,11 +25,11 @@ module Cerberus
           }.freeze
 
           has_many :left_conditions,
-                   class_name: "#{namespace}Expression",
+                   class_name: "#{namespace}Expressions::Condition",
                    inverse_of: :left_operand,
                    dependent:  :restrict_with_exception
           has_many :right_conditions,
-                   class_name: "#{namespace}Expression",
+                   class_name: "#{namespace}Expressions::Condition",
                    inverse_of: :right_operand,
                    dependent:  :restrict_with_exception
 

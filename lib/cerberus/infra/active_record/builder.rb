@@ -38,9 +38,9 @@ module Cerberus
 
         def build_condition(condition)
           domain_condition.new(
-            left:     build_operand(condition.left),
-            operator: condition.operator,
-            right:    build_operand(condition.right)
+            left:     build_operand(condition.left_operand),
+            operator: condition.operator_before_type_cast,
+            right:    build_operand(condition.right_operand)
           )
         end
 

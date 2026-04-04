@@ -9,7 +9,7 @@ module Cerberus
           self.table_name_prefix = 'cerberus_'
 
           def self.namespace
-            name.gsub(/\w+\z/, '')
+            'Cerberus::Infra::ActiveRecord::Models::'
           end
         end
       end

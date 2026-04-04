@@ -4,15 +4,16 @@ RSpec.describe Cerberus::Application::Authorizer do
   let(:authorizer) { described_class.new(resolver:) }
   let(:resolver) { double('Resolver') }
   let(:action) { 'test' }
+  let(:resource_type) { 'test' }
   let(:subject_data) { { id: 1, name: 'test' } }
   let(:resource) { { id: 1, name: 'test' } }
   let(:env) { { id: 1, name: 'new' } }
   let(:policy) { instance_double(Cerberus::Domain::Policy) }
 
-  before { allow(resolver).to receive(:execute).with(action).and_return(policy) }
+  before { allow(resolver).to receive(:resolve).with(action:, resource_type:).and_return(policy) }
 
   describe '#authorize!' do
-    subject { authorizer.authorize!(action:, subject: subject_data, resource:, env:) }
+    subject { authorizer.authorize!(action:, resource_type:, subject: subject_data, resource:, env:) }
 
     context 'when policy exist' do
       before do
@@ -46,7 +47,7 @@ RSpec.describe Cerberus::Application::Authorizer do
   end
 
   describe '#authorized?' do
-    subject { authorizer.authorized?(action:, subject: subject_data, resource:, env:) }
+    subject { authorizer.authorized?(action:, resource_type:, subject: subject_data, resource:, env:) }
 
     context 'when policy exist' do
       before do

@@ -31,6 +31,14 @@ module Cerberus
       def plugin(name, **opts)
         Cerberus::Plugins.load(configuration, name, **opts)
       end
+
+      def authorized?(**args)
+        configuration.authorizer.authorized?(**args)
+      end
+
+      def authorize!(**args)
+        configuration.authorizer.authorize!(**args)
+      end
     end
   end
 end

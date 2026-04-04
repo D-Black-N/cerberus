@@ -2,7 +2,7 @@
 
 module Cerberus
   class Configuration
-    attr_accessor :resolver
+    attr_accessor :authorizer
 
     def plugins
       @plugins ||= []

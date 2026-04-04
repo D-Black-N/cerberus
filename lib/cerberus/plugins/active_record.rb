@@ -7,14 +7,16 @@ module Cerberus
         def apply(config, **)
           load_dependencies
 
-          config.resolver = Application::Resolver.new(
-            repository: Infra::ActiveRecord::Repository.new(
-              model: Infra::ActiveRecord::Models::Policy
-            ),
-            mapper:     Infra::ActiveRecord::Mapper.new(
-              domain_policy: Domain::Policy,
-              domain_rule:   Domain::Rule,
-              builder:       Infra::ActiveRecord::Builder.new
+          config.authorizer = Application::Authorizer.new(
+            resolver: Application::Resolver.new(
+              repository: Infra::ActiveRecord::Repository.new(
+                model: Infra::ActiveRecord::Models::Policy
+              ),
+              mapper:     Infra::ActiveRecord::Mapper.new(
+                domain_policy: Domain::Policy,
+                domain_rule:   Domain::Rule,
+                builder:       Infra::ActiveRecord::Builder.new
+              )
             )
           )
         end

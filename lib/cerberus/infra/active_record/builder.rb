@@ -46,7 +46,7 @@ module Cerberus
 
         def build_operand(operand)
           domain_operand.new(
-            kind:       operand.kind,
+            kind:       operand.kind.to_sym,
             name:       operand.name,
             value:      operand.value,
             value_type: operand.value_type

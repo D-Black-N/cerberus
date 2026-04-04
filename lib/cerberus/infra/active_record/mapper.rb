@@ -14,7 +14,7 @@ module Cerberus
 
         def call(record)
           domain_policy.new(
-            strategy: record.strategy,
+            strategy: record.strategy.to_sym,
             rules:    record.rules.map { |rule| build_rule(rule) }
           )
         end
@@ -23,7 +23,7 @@ module Cerberus
 
         def build_rule(rule)
           domain_rule.new(
-            effect:     rule.effect,
+            effect:     rule.effect.to_sym,
             expression: builder.build(rule.expression)
           )
         end

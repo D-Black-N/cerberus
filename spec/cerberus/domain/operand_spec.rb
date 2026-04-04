@@ -6,7 +6,7 @@ RSpec.describe Cerberus::Domain::Operand do
   let(:context) { {} }
 
   context 'with literal value' do
-    let(:kind) { 'constant' }
+    let(:kind) { :constant }
     let(:name) { nil }
     let(:value) { '42' }
     let(:value_type) { 'integer' }
@@ -17,7 +17,7 @@ RSpec.describe Cerberus::Domain::Operand do
   end
 
   context 'with context' do
-    let(:kind) { 'subject' }
+    let(:kind) { :subject }
     let(:name) { 'role' }
     let(:value) { nil }
     let(:value_type) { nil }
@@ -28,7 +28,7 @@ RSpec.describe Cerberus::Domain::Operand do
       it { is_expected.to eq('admin') }
 
       context 'with nested attributes' do
-        let(:kind) { 'subject' }
+        let(:kind) { :subject }
         let(:name) { 'data.role' }
         let(:context) { { subject: { data: { role: 'admin' } } } }
 
@@ -43,7 +43,7 @@ RSpec.describe Cerberus::Domain::Operand do
       it { is_expected.to eq('admin') }
 
       context 'with nested attributes' do
-        let(:kind) { 'subject' }
+        let(:kind) { :subject }
         let(:name) { 'data.role' }
         let(:object) { Struct.new(:data, keyword_init: true) }
         let(:nested_object) { Struct.new(:role, keyword_init: true) }

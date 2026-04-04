@@ -4,7 +4,7 @@ module Cerberus
   module Infra
     module ActiveRecord
       module Models
-        class Rule < ActiveRecord::Base
+        class Rule < ApplicationRecord
           EFFECTS = { allow: 'allow', deny: 'deny' }.freeze
 
           has_many :policy_rules, class_name: "#{namespace}PolicyRule", dependent: :destroy

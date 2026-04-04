@@ -4,9 +4,9 @@ module Cerberus
   module Infra
     module ActiveRecord
       module Models
-        class PolicyRule < ActiveRecord::Base
-          belongs_to :policy, class_name: "#{namespaces}Policy"
-          belongs_to :rule, class_name: "#{namespaces}Rule"
+        class PolicyRule < ApplicationRecord
+          belongs_to :policy, class_name: "#{namespace}Policy"
+          belongs_to :rule, class_name: "#{namespace}Rule"
         end
       end
     end

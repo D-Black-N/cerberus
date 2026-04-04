@@ -4,7 +4,7 @@ module Cerberus
   module Infra
     module ActiveRecord
       module Models
-        class ApplicationRecord < ActiveRecord::Base
+        class ApplicationRecord < ::ActiveRecord::Base
           self.abstract_class = true
           self.table_name_prefix = 'cerberus_'
 

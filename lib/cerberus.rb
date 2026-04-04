@@ -14,19 +14,23 @@ require 'cerberus/domain/rule'
 require 'cerberus/domain/policy'
 
 require 'cerberus/application/authorizer'
+require 'cerberus/application/resolver'
+require 'cerberus/generators/migrations'
+require 'cerberus/plugins'
+require 'cerberus/configuration'
 
-class Cerberus
+module Cerberus
   class NotAuthorized < StandardError; end
 
-  module ClassMethods
-    def configuration
-      @configuration ||= Configuration.new
-    end
+  class Base
+    class << self
+      def configuration
+        @configuration ||= Cerberus::Configuration.new
+      end
 
-    def plugin(name, **opts)
-      Plugins.load(configuration, name, **opts)
+      def plugin(name, **opts)
+        Cerberus::Plugins.load(configuration, name, **opts)
+      end
     end
   end
-
-  extend ClassMethods
 end

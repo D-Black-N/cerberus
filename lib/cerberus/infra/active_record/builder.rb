@@ -4,12 +4,12 @@ module Cerberus
   module Infra
     module ActiveRecord
       class Builder
-        def initialize(args)
-          @node_model       = args.fetch(:node_model, Models::Node)
-          @condition_model  = args.fetch(:condition_model, Models::Condition)
+        def initialize(**args)
+          @node_model       = args.fetch(:node_model, Models::Expressions::Node)
+          @condition_model  = args.fetch(:condition_model, Models::Expressions::Condition)
           @domain_node      = args.fetch(:domain_node, Domain::Node)
-          @domain_condition = args.fetch(:domain_condition, Models::Node)
-          @domain_operand   = args.fetch(:domain_operand, Models::Node)
+          @domain_condition = args.fetch(:domain_condition, Domain::Condition)
+          @domain_operand   = args.fetch(:domain_operand, Domain::Operand)
         end
 
         def build(record)

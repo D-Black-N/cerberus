@@ -4,7 +4,7 @@ module Cerberus
   module Infra
     module ActiveRecord
       module Models
-        class Operand < ActiveRecord::Base
+        class Operand < ApplicationRecord
           KINDS = {
             subject:  'subject',
             resource: 'resource',

@@ -2,7 +2,7 @@
 
 module Cerberus
   module Infra
-    module Types
+    class Types
       MAPPER = {
         string:   ->(value) { value },
         integer:  ->(value) { Integer(value) },

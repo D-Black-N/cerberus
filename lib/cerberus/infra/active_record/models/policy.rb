@@ -4,7 +4,7 @@ module Cerberus
   module Infra
     module ActiveRecord
       module Models
-        class Policy < ActiveRecord::Base
+        class Policy < ApplicationRecord
           STRATEGIES = {
             permit_overrides:   'permit_overrides',
             permit_unless_deny: 'permit_unless_deny',
@@ -12,8 +12,8 @@ module Cerberus
             deny_unless_permit: 'deny_unless_permit'
           }.freeze
 
-          has_many :policy_rules, class_name: "#{namespaces}PolicyRule", dependent: :destroy
-          has_many :rules, class_name: "#{namespaces}Rule", through: :policy_rules
+          has_many :policy_rules, class_name: "#{namespace}PolicyRule", dependent: :destroy
+          has_many :rules, class_name: "#{namespace}Rule", through: :policy_rules
 
           enum :strategy, STRATEGIES
 

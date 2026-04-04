@@ -25,7 +25,7 @@ class InitCerberusMigration < ActiveRecord::Migration
   end
 
   create_table :cerberus_operands do |t|
-    t.string :kind, null: false,
+    t.string :kind, null: false
     t.string :value
     t.string :name
     t.string :value_type

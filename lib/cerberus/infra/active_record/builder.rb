@@ -31,7 +31,7 @@ module Cerberus
 
         def build_node(node)
           domain_node.new(
-            operator: node.operator,
+            operator: node.operator.to_sym,
             children: node.children.map { |child| build_record(child) }
           )
         end

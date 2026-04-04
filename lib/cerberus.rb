@@ -15,7 +15,7 @@ require 'cerberus/domain/policy'
 
 require 'cerberus/application/authorizer'
 
-module Cerberus
+class Cerberus
   class NotAuthorized < StandardError; end
 
   module ClassMethods

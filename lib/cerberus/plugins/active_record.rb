@@ -3,7 +3,7 @@
 module Cerberus
   module Plugins
     class ActiveRecord
-      def self.load(config, **)
+      def self.apply(config, **)
         require 'active_record'
         require 'cerberus/infra/active_record/**/*'
 

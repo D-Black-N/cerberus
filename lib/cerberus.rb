@@ -24,7 +24,7 @@ module Cerberus
     end
 
     def plugin(name, **opts)
-      Plugins.load(self, name, **opts)
+      Plugins.load(configuration, name, **opts)
     end
   end
 

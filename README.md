@@ -33,7 +33,7 @@ While internally it follows a modular architecture with pluggable adapters and d
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cerberus'
+gem 'cerberus-xacml'
 ```
 
 And then execute:

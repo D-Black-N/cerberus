@@ -3,7 +3,7 @@
 require_relative 'lib/cerberus/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cerberus'
+  spec.name          = 'cerberus-xacml'
   spec.version       = Cerberus::VERSION
   spec.authors       = ['Danil Nasibullin']
   spec.email         = ['dan.nasibullin@gmail.com']
